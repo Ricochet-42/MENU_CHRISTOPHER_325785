@@ -1,0 +1,113 @@
+body {
+    padding: 0% 20%;
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container {
+    border-radius: 12px;
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+#inputComentario {
+    border-radius: 8px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.comentario {
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    margin: 15px 0;
+    padding: 15px 20px;
+    border-left: 4px solid #89e725;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.comentario button {
+    border-radius: 6px;
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #89e725;
+    color: #000;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comentario button:hover {
+    background-color: #6bc400;
+}
+
+/* Subcomentarios */
+.subcomentario {
+    border-radius: 10px;
+    background-color: #eeeeee;
+    margin: 10px 0 10px 20px;
+    padding: 12px 20px;
+    border-left: 4px solid #1dd26f;
+}
+
+.subcomentario button {
+    margin-top: 8px;
+    padding: 6px 12px;
+    background-color: #1dd26f;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subcomentario button:hover {
+    background-color: #14a95a;
+}
+
+/* Subsubcomentarios */
+.subsubcomentario {
+    border-radius: 10px;
+    background-color: #e0e0e0;
+    margin: 10px 0 10px 40px;
+    padding: 10px 20px;
+    border-left: 4px solid #17a2b8;
+}
+
+.subsubcomentario button {
+    margin-top: 6px;
+    padding: 6px 12px;
+    background-color: #17a2b8;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subsubcomentario button:hover {
+    background-color: #117a8b;
+}
+
+/* Contenedores */
+.subcomentarios,
+.subsubcomentarios {
+    margin-top: 10px;
+}

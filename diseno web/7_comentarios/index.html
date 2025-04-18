@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<div class="container">
+    <center><h1>PRACTICA JS 325785</h1>
+    <div class="input">
+        <input type="text" id="inputComentario" placeholder="Escribe un comentario">
+    </div>
+</center>
+    <div class="contenedor"></div>
+</div>
+    <script>
+        let arreglo = [];//lugar donde almaceno los comentarios
+    
+        function crearComentario(event){
+            if(event.key == "Enter" && event.target.value != ""){
+                const nuevocomentario = {
+                    texto: event.target.value,
+                    likes: 0,
+                    subcomentarios: []  
+                };
+
+                arreglo.push(nuevocomentario); // subir comentario a DB
+                event.target.value = "";
+                actualizarComentarios();
+            }
+        }
+
+        function actualizarComentarios(){
+            const contenedor = document.querySelector(".contenedor");
+            contenedor.innerHTML = ""; 
+
+            arreglo.forEach((i, j) => { 
+                const caja = document.createElement("div");
+                caja.classList.add("comentario");
+
+                const textoComentario = document.createElement("p");
+                textoComentario.textContent = i.texto;
+                caja.appendChild(textoComentario);
+
+                // likes
+                const boton = document.createElement("button");
+                boton.textContent = "likes: " + i.likes;
+                boton.addEventListener("click", function(){
+                    i.likes++;
+                    boton.textContent = "likes: " + i.likes;
+                });
+                caja.appendChild(boton);
+
+                // Eliminar
+                const botonEliminar = document.createElement("button");
+                botonEliminar.textContent = "Eliminar";
+                botonEliminar.addEventListener("click", function(){
+                    arreglo.splice(j, 1);
+                    actualizarComentarios();
+                });
+                caja.appendChild(botonEliminar);
+
+                // Contenedor de subcomentarios
+                const contenedor2 = document.createElement("div");
+                contenedor2.classList.add("subcomentarios");
+
+                // Input para subcomentarios
+                const input1 = document.createElement("input");
+                input1.placeholder = "Comentar";
+                input1.addEventListener("keydown", function(event){
+                    if(event.key == "Enter" && input1.value != ""){
+                        const nuevoSubcomentario = {
+                            texto: input1.value,
+                            likes: 0,
+                            subcom: [] // Subcomentarios del subcomentario
+                        };
+                        i.subcomentarios.push(nuevoSubcomentario);
+                        input1.value = "";
+                        actualizar2(contenedor2, i.subcomentarios);
+                    }
+                });
+                caja.appendChild(input1);
+                
+                actualizar2(contenedor2, i.subcomentarios);
+                caja.appendChild(contenedor2);
+
+                contenedor.appendChild(caja);
+            });
+        }
+
+        function actualizar2(contenedor, subcoms){
+            contenedor.innerHTML = ""; 
+
+            subcoms.forEach((subc, subIndex) => {
+                const caja = document.createElement("div");
+                caja.classList.add("subcomentario");
+
+                const texto = document.createElement("p");
+                texto.textContent = subc.texto;
+                caja.appendChild(texto);
+
+                const boton = document.createElement("button");
+                boton.textContent = "likes: " + subc.likes;
+                boton.addEventListener("click", function(){
+                    subc.likes++;
+                    boton.textContent = "likes: " + subc.likes;
+                });
+                caja.appendChild(boton);
+
+                const eliminar = document.createElement("button");
+                eliminar.textContent = "Eliminar";
+                eliminar.addEventListener("click", function(){
+                    subcoms.splice(subIndex, 1);
+                    actualizar2(contenedor, subcoms);
+                });
+                caja.appendChild(eliminar);
+
+                // Contenedor para subsubcomentarios
+                const contenedor3 = document.createElement("div");
+                contenedor3.classList.add("subsubcomentarios");
+
+                // Input para subsubcomentarios
+                const input2 = document.createElement("input");
+                input2.placeholder = "Comentar ";
+                input2.addEventListener("keydown", function(event){
+                    if(event.key == "Enter" && input2.value != ""){
+                        const nuevoSubsubcomentario = {
+                            texto: input2.value,
+                            likes: 0
+                        };
+                        subc.subcom.push(nuevoSubsubcomentario);
+                        input2.value = "";
+                        actualizar3(contenedor3, subc.subcom, subc.subcom);
+                    }
+                });
+                caja.appendChild(input2);
+
+                // Actualizamos los subsubcomentarios
+                actualizar3(contenedor3, subc.subcom, subc.subcom);
+                caja.appendChild(contenedor3);
+
+                contenedor.appendChild(caja);
+            });
+        }
+
+        function actualizar3(contenedor, subsubcoms, subcoms){
+            contenedor.innerHTML = ""; 
+
+            subsubcoms.forEach((subsubc, subsubIndex) => {
+                const caja = document.createElement("div");
+                caja.classList.add("subsubcomentario");
+
+                const texto = document.createElement("p");
+                texto.textContent = subsubc.texto;
+                caja.appendChild(texto);
+
+                const boton = document.createElement("button");
+                boton.textContent = "likes: " + subsubc.likes;
+                boton.addEventListener("click", function() {
+                    subsubc.likes++;
+                    boton.textContent = "likes: " + subsubc.likes;
+                });
+                caja.appendChild(boton);
+
+                const eliminar = document.createElement("button");
+                eliminar.textContent = "Eliminar";
+                eliminar.addEventListener("click", function() {
+                    // Eliminar el subsubcomentario del array `subcom` del subcomentario correspondiente
+                    subcoms.splice(subsubIndex, 1);
+                    actualizar3(contenedor, subcoms, subcoms); // Actualiza la vista después de la eliminación
+                });
+                caja.appendChild(eliminar);
+
+                contenedor.appendChild(caja);
+            });
+        }
+
+        // Inicializamos el evento para el comentario principal
+        const inputComentario = document.querySelector("#inputComentario");
+        inputComentario.addEventListener("keydown", crearComentario);
+    </script>
+    
+</body>
+</html>

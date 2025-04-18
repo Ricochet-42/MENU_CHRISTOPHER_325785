@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="slider-container"> 
+        <div>
+            <img class="slide-img" src="img/1.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="BOTONES">
+        <button class="botonanterior">ANTERIOR</button>
+        <button class="botonsig">SIGUIENTE</button>
+    </div>
+
+
+    <script>
+        arreglo=["img/1.jpg","img/6000.jpg","img/3.jpg","img/4.jpg","img/5.jpg"];
+        contador=0;
+        
+        cajitaImg=document.querySelector(".slide-img");
+        sig=document.querySelector(".botonsig");
+        ant=document.querySelector(".botonanterior");
+        
+        ant.style.display= 'none'
+        sig.addEventListener("click",
+        function(){
+            contador++;
+            cajitaImg.setAttribute("src", arreglo[contador]);
+                if(contador==arreglo.length-1){
+                    sig.style.display= 'none'
+                    
+                    ant.style.display= 'block'
+                }else{
+                    sig.style.display='block'
+                    
+                    ant.style.display= 'block'
+                }
+        }
+        );
+
+        ant.addEventListener("click",
+        function(){
+            if(contador<0){}
+            else{
+            contador--;
+            cajitaImg.setAttribute("src", arreglo[contador]);
+                if(contador==0){
+                    ant.style.display= 'none'
+                    
+                    sig.style.display= 'block'
+
+                }else{
+                    sig.style.display='block'
+                    
+                    ant.style.display= 'block'
+                }
+            }
+        }
+        );
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+body {
+    background-image: url(img/rojo.png!w700wp);
+    text-align: center;
+    align-content: center;
+    margin: 0;
+    
+}
+
+#gris{
+    left: 0px;
+    width: 70%;
+    height: 100%;
+    position: fixed;
+    background: linear-gradient(to bottom, #444242, #1a1919);
+    z-index: 0;
+    border: 2px solid black;
+}
+
+
+
+
+
+
+#header{
+    position: fixed;
+    top: 25px;
+    margin-right: 0;
+    width: 90%;
+    right: 0;
+
+    text-align: left;
+    height: 20%;
+    background: linear-gradient(to bottom,  #7eba34, #318e17);
+    z-index: 9;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 5);
+    border-radius: 20px;
+    
+    border: 3px solid black;
+    
+}
+
+#title{
+
+}
+
+.item{
+    background-color: #178a8e;
+    position: relative;
+    display: flex;
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    margin-left: 40px;
+}
+
+
+#menu{
+    align-items: center;
+    
+    display: flex; /* Esto alinea los elementos en una fila */
+    position: fixed;
+    top: 30%;
+    margin-right: 0;
+    width: 80%;
+    right: 0;
+
+    height: 50%;
+    background: linear-gradient(to bottom,  #7eba34, #318e17);
+    z-index: 9;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 5);
+    border-radius: 20px;
+    
+    border: 3px solid black;
+}
+
+
+#pizzota{
+    /*-border: 3px solid #567F47;-*/
+    border-radius: 100%;
+    top: 10px;
+    width:60%;
+    opacity: 0.5;
+    left: 0px;
+    position: fixed;
+    height: 100%;
+}

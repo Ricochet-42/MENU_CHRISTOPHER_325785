@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiPrimerJS</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div>
+    </div>
+    
+    <div id="calc">
+        
+    <h1>CALCULADORA</h1>
+        <p>Ingresa el numero 1</p>
+        <input id="uno" type="text">
+        
+        <p>Ingresa el numero 1</p>
+        <input id="dos" type="text">
+        <br><br>
+        <input id="suma" type="submit" value="+" onclick="Suma()">
+        <input id="resta" type="submit" value="-" onclick="Resta()">
+        <input id="division" type="submit" value="/" onclick="Divid()">
+        <input id="multiplicacion" type="submit" value="*" onclick="Mult()">
+        <br><br>
+        <input id="res" type="text">
+    </div>
+    
+<script>
+    function Suma(){
+        var x=document.getElementById("uno").value;
+        var y=document.getElementById("dos").value;
+        x = parseInt(x);
+        y = parseInt(y);
+        res=x+y;
+        var cajita=document.getElementById("res");
+        cajita.value=res+"";
+    }
+
+    function Resta(){
+        var x=document.getElementById("uno").value;
+        var y=document.getElementById("dos").value;
+        x = parseInt(x);
+        y = parseInt(y);
+        res=x-y;
+        var cajita=document.getElementById("res");
+        cajita.value=res+"";
+    }
+
+    function Divid(){
+        var x=document.getElementById("uno").value;
+        var y=document.getElementById("dos").value;
+        x = parseInt(x);
+        y = parseInt(y);
+        res=x/y;
+        var cajita=document.getElementById("res");
+        cajita.value=res+"";
+    }
+
+    function Mult(){
+        var x=document.getElementById("uno").value;
+        var y=document.getElementById("dos").value;
+        x = parseInt(x);
+        y = parseInt(y);
+        res=x*y;
+        var cajita=document.getElementById("res");
+        cajita.value=res+"";
+    }
+</script>
+
+</body>
+</html>

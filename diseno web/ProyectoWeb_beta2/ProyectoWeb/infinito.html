@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="infor">
+        <h2>INFORMACIÓN</h2>
+        <p>El que pizzas esta en problema, ratas amantes de las pizzas vienen a apropiarse del lugar, tu deber es eliminarlas por completo y asegurar el exito del lugar, no dejes que el contador de ratas llegue a 30 o que se termine el tiempo, pues sera el fin de nuestro negocio, suerte!</p>
+    </div>
+    <div id="gris">
+        <img src="img/pizzaC.png" id="pizzota" alt="">
+    </div>
+    <div id="header">
+        <h1 id="title">K-PIZZAS</h1>
+    </div>
+    <div id="lose">
+        <h1>FIN DEL JUEGO</h1>
+        <H3>estadisticas:</H3>
+    </div>
+    <button id="inicio"><img src="img/hogar.png" class="logo" alt=""></button>
+    
+    <button id="info" onclick="toggleContenedor()"><img src="img/informacion.png" class="logo" alt=""></button>
+    
+    <button id="reinicio" onclick="reiniciarJuego()"><img src="img/volver.png" class="logo" alt=""></button>
+    <div id="green">
+    <div>
+        <a class="subt" id="score">Score: 0</a>
+        <a class="subt" id="time">Tiempo: 0</a>
+        <a class="subt" id="ratas">Ratas: 0</a>
+    </div>
+    <div id="container">
+        <button id="play"></button></div>
+        
+    </div>
+    <script src="infinito.js"></script>
+</body> 
+</html>

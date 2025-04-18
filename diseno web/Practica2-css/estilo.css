@@ -1,0 +1,56 @@
+*{
+    font-family: Verdana;
+
+}
+
+
+body {
+    background-image: url(img/chesswp.jpg);
+    background-size: cover;
+    margin: 0;
+    height: 100vh;
+}
+.contenedor{
+    display: flex;
+    align-items: center; /*-centrar -*/
+    height: 100vh /*-porcentaje-*/;
+    justify-content: center; /*-horizontal-*/
+}
+
+.imagen img{
+    width: 125px;
+    height: 125px;
+    transition: transform 1s ease-in-out; /*-animacion al subir y al bajar-*/
+    background-color: whitesmoke;
+    font-weight: bold;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+.cajatexto{
+    background-color: whitesmoke;
+    font-weight: bold;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+    text-align: center;
+    margin: 10px;
+}
+/*-hover es una accion-*/
+
+.imagen:hover .cajatexto{/*-cuando estemos sobre imagen, sera evento hover y afectaremos cajatexto-*/
+    display: block;
+    
+    
+    transform: translateY(-280px);
+}
+
+.imagen:hover img{
+    height: 150px;
+    width: 150px;
+    transform: translateY(-30px);
+}

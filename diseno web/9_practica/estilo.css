@@ -1,0 +1,96 @@
+
+
+body{
+    margin: 0px;
+    padding-top: 90px;
+    background-color: whitesmoke;
+}
+div{
+    margin: 25px;
+    text-align: center;
+}
+
+.header{
+    top: 20px;
+    display: flex;
+    height: 60px;
+    width: 100vw;
+    margin: -20px;
+    background-color: #2874a6 ;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    
+    
+}
+
+#headermn{
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    font-size: large;
+    text-decoration: none;
+    color: aliceblue;
+    margin: 0px 20px 0px 20px;
+    transition: transform 1s ease-in-out; /*-animacion al subir y al bajar-*/
+    
+}
+
+h1{
+    font-size: 50px;
+    color: #2e86c1 ;
+}
+
+h2{
+    margin-top: 70px;
+    font-size: 40px;
+    color: #2e86c1 ;
+}
+
+button{
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #2874a6 ;
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'Times New Roman';
+    margin: 0px 10px 0px 10px;
+    transition: transform .3s ease-in-out
+
+}
+
+img{
+    width: 60px;
+    height: 60px;
+}
+
+.dos{
+    width: 100px;
+    height: 50px;
+    
+}
+
+.under{
+    padding: 40px 250px;
+    text-align: left;
+    background-color: rgba(183, 183, 183, 0.148);
+    border: 2px solid rgb(190, 190, 190);    
+    margin: -10px;
+    
+}
+#puno{
+    margin: 0px 200px;
+}
+
+button:hover {
+    transform: scale(1.2); 
+}
+
+.header #headermn:hover {
+    color: #2e86c1; 
+}
+
+p{
+    font-weight:550;
+}

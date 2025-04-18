@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="container"></div>
+
+    <script>
+        let arreglo=["#85c1e9","#48c9b0","#45b39d","#27ae60","#186a3b"];
+        let contenedor=document.querySelector(".container");
+        for(let i=1; i<50;i++){
+
+            let cuadrado=document.createElement("div");
+            cuadrado.classList.add("square");
+            cuadrado.setAttribute("val","false");
+            contenedor.appendChild(cuadrado);
+
+            cuadrado.addEventListener("mouseover",
+                function(){
+                    if(cuadrado.getAttribute("val")=="false"){
+                        num=Math.floor(Math.random()*arreglo.length);
+                        console.log(num);
+                        cuadrado.style.background=arreglo[num];
+                        cuadrado.setAttribute("val","true");
+                    }
+                }
+                
+            );
+
+            cuadrado.addEventListener("mouseout",
+                function(){
+                    
+                    console.log("")
+                    cuadrado.style.background="#1d1d1d";
+                    
+                }
+            );
+        }
+    </script>
+</body>
+</html>
