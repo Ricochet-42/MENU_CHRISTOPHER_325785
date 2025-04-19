@@ -1,0 +1,144 @@
+body {
+    background-image: url(img/rojo.png!w700wp);
+    text-align: center;
+    align-content: center;
+    margin: 0;
+    
+}
+
+#gris{
+    left: 0px;
+    width: 70%;
+    height: 100%;
+    position: fixed;
+    background: linear-gradient(to bottom, #444242, #1a1919);
+    z-index: 0;
+    border: 2px solid black;
+}
+
+
+
+
+
+
+#header{
+    position: fixed;
+    top: 25px;
+    width: 90%;
+    right: 0;
+    text-align: left;
+    height: 20%;
+    background: linear-gradient(to bottom,  #7eba34, #318e17);
+    z-index: 9;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 5);
+    border-radius: 20px;
+    padding-top: 0%;
+    
+    border: 3px solid black;
+}
+
+#title{
+    margin: 10px 0 30px 40px;
+    font-size: 100px;
+    
+    font-family: cursive;
+    color: #f6ff00;
+    -webkit-text-stroke: 3px black;
+
+    padding: 0; /* Elimina el padding predeterminado de h1 */
+}
+
+.imagen{
+    margin-top: 5%;
+    width: 100%;
+    height: 80%;
+}
+.imagenuno{
+    margin-top: 25%;
+    width: 100%;
+    height: 60%;
+}
+
+
+
+
+#menu{
+    align-items: center;
+    
+    display: flex; /* Esto alinea los elementos en una fila */
+    position: fixed;
+    top: 30%;
+    margin-right: 0;
+    width: 75%;
+    right: 0;
+
+    height: 50%;
+    background: linear-gradient(to bottom,  #7eba34, #318e17);
+    z-index: 9;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 5);
+    border-radius: 20px;
+    
+    border: 3px solid black;
+}
+
+#info{
+    width: 20%;
+    height: 50%;
+    background-color: #bdc1b9f5;
+    position: fixed;
+    z-index: 10;
+    bottom: 50px;
+    left: 30px;
+    border: 2px solid black;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+#pizzota{
+    /*-border: 3px solid #567F47;-*/
+    border-radius: 100%;
+    top: 10px;
+    width:60%;
+    left: 0px;
+    position: fixed;
+    height: 100%;
+}
+
+.item {
+    background: linear-gradient(to bottom,  #d2791f, #8a0d0d);
+    
+    border: 3px solid black;
+    position: relative;
+    display: flex;
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    margin-left: 40px;
+    transition: transform .5s ease-in-out; /* Animación al subir y al bajar */
+}
+
+.cajatexto {
+    background-color: whitesmoke;
+    font-weight: bold;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+    position: absolute; /* Asegura que se posicione debajo del item */
+    top: 100%; /* Posiciona justo debajo del .item */
+    left: 0;
+    width: 100%; /* Mismo ancho que el .item */
+    box-sizing: border-box; /* Para que el padding no afecte al ancho total */
+}
+
+.item:hover {
+    transform: scale(1.15); /* Agranda el .item al hacer hover */
+}
+
+.item:hover .cajatexto {
+    display: block; /* Muestra el .cajatexto cuando el mouse pasa sobre el .item */
+    
+}
